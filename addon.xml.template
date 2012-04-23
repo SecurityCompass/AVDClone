@@ -1,0 +1,18 @@
+<sdk:sdk-addon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdk="http://schemas.android.com/sdk/android/addon/1">
+  <sdk:add-on>
+    <sdk:name>NAME</sdk:name>
+    <sdk:api-level>LEVEL</sdk:api-level>
+    <sdk:vendor>VENDOR</sdk:vendor>
+    <sdk:revision>REVISION</sdk:revision>
+    <sdk:description>DESCRIPTION</sdk:description>
+    <sdk:archives>
+      <sdk:archive os="any">
+        <sdk:size>BYTES</sdk:size>
+        <sdk:checksum type="sha1">CHECKSUM</sdk:checksum>
+        <sdk:url>URL</sdk:url> 
+      </sdk:archive>
+    </sdk:archives>
+    <sdk:libs>
+    </sdk:libs>
+  </sdk:add-on>
+</sdk:sdk-addon>
