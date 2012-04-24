@@ -5,7 +5,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import hashlib
 import sys
 
-TEMPLATE_FILE = 'addon.xml.template'
+TEMPLATE_FILE = path.join(path.realpath(__file__), 'templates', 'addon.xml')
 AVD_PATH = path.expanduser('~/.android/avd')
 if sys.platform == 'macosx':
     SDK_PATH = path.expanduser('~/android-sdk-macosx')

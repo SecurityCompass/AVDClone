@@ -16,7 +16,7 @@ You will need the following python modules
 Usage
 -----
 1. Create an AVD you want to clone, and change any settings or install any apps you wish to persist
-2. Create a config.ini basef on config.ini.template
+2. Create a config.ini basef on the config.ini in the templates directory
 3. Run `python AVDclone.py -c /path/to/config.ini AVD_NAME`
 4. Pointing the Android SDK Manager to the newly created 'addons.xml' file will allow you to install this AVD as a package. (I like to use `python -m SimpleHTTPServer` to host a directory for local development)
 
