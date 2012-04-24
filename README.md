@@ -1,5 +1,5 @@
-avdclone
-=======
+AVDClone
+========
 
 Clone an Android Virtual Device for easy distribution through the Android SDK Manager.  You can create an AVD preinstalled with the apps and settings you need, and distribute it to others by having them point their Android SDK Manager to your repository.
 
