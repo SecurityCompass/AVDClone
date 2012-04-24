@@ -37,6 +37,7 @@ if __name__ == '__main__':
     parser.add_argument('base_avd', metavar='AVD', nargs=1, help='AVD to base package off of')
     parser.add_argument('-c', '--config', metavar='FILE', action='store', type=str, required=True, dest='config_file', help='configuration file')
     parser.add_argument('-o', '--output', metavar='PATH', action='store', type=str, dest='output_path', default='.', help="generate output in PATH (default is '.'")
+    parser.add_argument('-s', '--system', metavar='PATH', action='store', type=str, dest='system', default=False, help="path to a custom system.img file")
     parser.add_argument('--avd_path',  metavar='PATH', action='store', type=str, default=AVD_PATH, dest='avd_path',
                         help="android avd path (default is '~/.android/avd')")
     parser.add_argument('--sdk_path', metavar='PATH', action='store', type=str, default=SDK_PATH, dest='sdk_path',
@@ -47,7 +48,7 @@ if __name__ == '__main__':
     base_avd = args.base_avd[0]
     avd_path = args.avd_path
     sdk_path = path.expanduser(args.sdk_path)
-
+    
     print ' [+] Building a package from AVD: ' + base_avd  
     #load config file
     cf = ConfigFile(open(args.config_file))
@@ -72,7 +73,10 @@ if __name__ == '__main__':
     else:
         zf.write(path.join(user_image_path, 'userdata-qemu.img'), path.join(filename, 'images/userdata-qemu.img'))
     print ' [+] Writing system.img'
-    zf.write(path.join(sdk_image_paths[0], 'system.img'), path.join(filename, 'images/system.img'))
+    if args.system:
+        zf.write(path.join(sdk_image_paths[0], 'system.img'), path.join(filename, args.system))
+    else:
+        zf.write(path.join(sdk_image_paths[0], 'system.img'), path.join(filename, 'images/system.img'))
     print ' [+] Writing ramdisk.img'
     zf.write(path.join(sdk_image_paths[0], 'ramdisk.img'), path.join(filename, 'images/ramdisk.img'))
 

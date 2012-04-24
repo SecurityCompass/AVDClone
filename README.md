@@ -24,5 +24,4 @@ Future
 ------
 Some planned features
 
-* Better support for custom system.img (so you can package your AVD with custom certificate chains for SSL proxy support)
 * Better support for multiple AVDs in a repository
