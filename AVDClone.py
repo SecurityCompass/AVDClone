@@ -9,7 +9,9 @@ TEMPLATE_FILE = path.join(path.realpath(__file__), 'templates', 'addon.xml')
 AVD_PATH = path.expanduser('~/.android/avd')
 if sys.platform == 'macosx':
     SDK_PATH = path.expanduser('~/android-sdk-macosx')
-else:
+elif sys.platform == 'win32':
+    SDK_PATH = path.abspath('C:\android-sdk-windows')
+else: #we're going to assume that anything else is linux 
     SDK_PATH= path.expanduser('~/android-sdk-linux')
 
         
